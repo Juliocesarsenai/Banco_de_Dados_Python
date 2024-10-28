@@ -11,11 +11,11 @@ class UsuarioService:
     def criar_usuario(self,nome:str,email:str,senha:str):
         try:
 
-            usuario=Usuario(nome,email=email,senha=senha)
+            usuario=Usuario(nome=nome,email=email,senha=senha)
         
             novo_usuario=self.repository.pesquisar_usuario__por__email(usuario.email)
 
-            if not novo_usuario:
+            if novo_usuario:
                 print("Usuario já cadastrado!")
                 return
 

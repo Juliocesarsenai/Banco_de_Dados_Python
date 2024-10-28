@@ -1,13 +1,16 @@
 from services.usuario_service import UsuarioService
 from repositories.usuario_repositories import UsuarioRepository
 from config.database import Session
-
+import os
 def main():
+
+    
     session=Session()
     repository=UsuarioRepository(session)
     service=UsuarioService(repository)
 
     #Solicitando dados para o usuario
+    print("\nAdicionando Usuario")
     nome=input("Digite seu nome: ")
     email=input("Digite seu email: ")
     senha=input("Digite sua senha: ")
@@ -20,7 +23,8 @@ def main():
     lista_usuarios=service.listar_todos_usuarios()
 
     for usuario in lista_usuarios:
-        print(f"Nome: {usuario.nome}-Email: {usuario.email}-Senha: {usuario.senha}")
+        print(f"{usuario.nome} - {usuario.email} - {usuario.senha}")
 
-if __name__=="__main__":
+if __name__ == "__main__":
+    os.system("cls||clear")
     main()

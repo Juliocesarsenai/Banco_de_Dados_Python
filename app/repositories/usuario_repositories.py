@@ -11,10 +11,10 @@ class UsuarioRepository:
     def salvar_usuario(self,usuario:Usuario):
         self.session.add(usuario)
         self.session.commit()
-        self.session.refresh()
+        self.session.refresh(usuario)
 
 
-    def pesquisar_usuario__por__email(self,email:str);
+    def pesquisar_usuario__por__email(self,email:str):
         return self.session.query(Usuario).filter_by(email=email).first()
 
 
