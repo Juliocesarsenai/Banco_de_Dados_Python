@@ -38,7 +38,7 @@ def main():
                     usuario_email = input("Digite o email do usuário que você deseja encontrar: ")
 
         # Chama o método de pesquisa no serviço
-                    usuario = service.pesquisar_usuario__por__email(usuario_email)
+                    usuario = service.repository.pesquisar_usuario__por__email(usuario_email)
 
         # Exibe as informações do usuário encontrado
                     if usuario:
@@ -88,7 +88,7 @@ def main():
                 print("Excluindo usuário")
                 try:
                     usuario_id = int(input("Digite o ID do usuário a ser excluído: "))
-                    repository.excluir_usuario(usuario_id)
+                    usuario=service.repository.excluir_usuario(usuario_id)
                 except ValueError:
                     print("Por favor, insira um ID válido.")
                    

@@ -28,6 +28,21 @@ class UsuarioService:
         except Exception as erro:
             print(f"Ocorreu um erro inesperado: {erro}")
 
+    
+
+    def pesquisar_usuario_por_id(self, usuario_id):
+        return self.repository.buscar_por_id(usuario_id)
+
+    def atualizar_usuario(self, usuario_id, nome, email, senha):
+        usuario = self.repository.buscar_por_id(usuario_id)
+        if usuario:
+            usuario.nome = nome
+            usuario.email = email
+            usuario.senha = senha
+            self.repository.salvar(usuario)  # Salva as alterações no banco de dados
+        else:
+            raise ValueError("Usuário não encontrado para atualização")
+
     def listar_todos_usuarios(self):
         return self.repository.listar_usuarios()
     

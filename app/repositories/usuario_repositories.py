@@ -18,10 +18,15 @@ class UsuarioRepository:
         return self.session.query(Usuario).filter_by(email=email).first()
 
 
-    def excluir_usuario(self,usuario:Usuario):
+    def excluir_usuario(self,usuario_id):
+        usuario = self.session.query(Usuario).filter(Usuario.id == usuario_id).first()
         self.session.delete(usuario)
         self.session.commit()
-        self.session.refresh()
+    
+
+    def buscar_por_id(self, usuario_id):
+        return self.session.query(Usuario).filter(Usuario.id == usuario_id).first()
+
 
 
     def listar_usuarios(self):
