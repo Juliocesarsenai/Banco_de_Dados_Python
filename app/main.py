@@ -30,7 +30,7 @@ def main():
                 email=input("Digite seu email: ")
                 senha=input("Digite sua senha: ")
                 service.criar_usuario(nome=nome,email=email,senha=senha)
-                break
+                
 
             case "2":
                 try:
@@ -59,7 +59,7 @@ def main():
                     usuario_id = int(input("Digite o ID do usuário a ser atualizado: "))
 
                     # Pesquisa o usuário pelo ID para garantir que ele exista
-                    usuario = repository.pesquisar_usuario__por__email(usuario.email)
+                    usuario = repository.buscar_por_id(usuario_id)
 
                     
                     if usuario:
@@ -89,11 +89,12 @@ def main():
                 try:
                     usuario_id = int(input("Digite o ID do usuário a ser excluído: "))
                     usuario=service.repository.excluir_usuario(usuario_id)
+                    print("Usuario excluido com sucesso")
                 except ValueError:
                     print("Por favor, insira um ID válido.")
                    
                     
-                break
+                
             case "5":
 
                 print("Exibir todos os usuarios")

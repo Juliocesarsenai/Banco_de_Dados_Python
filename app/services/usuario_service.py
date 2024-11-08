@@ -39,7 +39,7 @@ class UsuarioService:
             usuario.nome = nome
             usuario.email = email
             usuario.senha = senha
-            self.repository.salvar(usuario)  # Salva as alterações no banco de dados
+            self.repository.salvar_usuario(usuario)  # Salva as alterações no banco de dados
         else:
             raise ValueError("Usuário não encontrado para atualização")
 
