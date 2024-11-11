@@ -65,12 +65,12 @@ def main():
                     if usuario:
                         print(f"Usuário encontrado: ID: {usuario.id} | Nome: {usuario.nome} | Email: {usuario.email}")
 
-                        # Solicita os novos dados
+                      
                         novo_nome = input(f"Digite o novo nome (atual: {usuario.nome}): ")
                         novo_email = input(f"Digite o novo email (atual: {usuario.email}): ")
                         nova_senha = input("Digite a nova senha: ")
 
-                        # Chama o serviço para atualizar o usuário
+                        
                         service.atualizar_usuario(usuario_id, novo_nome, novo_email, nova_senha)
                         print("Usuário atualizado com sucesso!")
                     else:
@@ -119,12 +119,12 @@ def main():
  
     
 
-    #Listar todos os usuários cadastrados
-        #print("\nListando todos os usuarios cadastrados.")
-        #lista_usuarios=service.listar_todos_usuarios()
+   
+        print("\nListando todos os usuarios cadastrados.")
+        lista_usuarios=service.listar_todos_usuarios()
 
-        #for usuario in lista_usuarios:
-            #print(f"{usuario.nome} - {usuario.email} - {usuario.senha}")
+        for usuario in lista_usuarios:
+            print(f"{usuario.nome} - {usuario.email} - {usuario.senha}")
 
 if __name__ == "__main__":
     os.system("cls||clear")
