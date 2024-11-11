@@ -1,5 +1,5 @@
 from models.usuario_model import Usuario
-from repositories.usuario_repositories import UsuarioRepository
+from app.repositories.usuario_repositories import UsuarioRepository
 
 class UsuarioService:
     

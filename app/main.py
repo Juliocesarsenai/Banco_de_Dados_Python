@@ -1,8 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 from services.usuario_service import UsuarioService
 from repositories.usuario_repositories import UsuarioRepository
 from config.database import Session
-import os
-
 
 def main():
 
