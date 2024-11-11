@@ -81,9 +81,7 @@ def main():
                     print("Por favor, insira um ID válido.")
                 except Exception as e:
                     print(f"Ocorreu um erro ao atualizar o usuário: {e}")
-                break
-              
-                break
+             
 
             case "4":
                 print("Excluindo usuário")
